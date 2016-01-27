@@ -1,0 +1,8 @@
+/style.css
+/scripts.js
+/node_modules
+.map
+/tmp
+/languages
+/languages/**
+/languages/*

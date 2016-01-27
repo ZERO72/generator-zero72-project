@@ -1,0 +1,23 @@
+// FONTSET FUNCTIONS
+// This function is intended to be called by other functions and can be used to get information from the Sass list above. The $feature can be any key from the Sass list such as line-height or font-size.
+@function _fontset-feature($feature, $family:$font-default, $set: 'base'){
+	$result: map-get(map-get($family, $set), $feature);
+	@return ($result * 1px);
+}
+
+// Sets the family from the stack key in a Sass list
+@function fontset-family($family) {
+	$result: map-get($family, stack);
+	@return unquote($result);
+}
+
+// FONT-SIZE + LINE-HEIGHT FUNCTIONS
+// These functions return the font-size or line-height depending on the font-family list. To avoid duplication these functions call the fontset-feature function above.
+
+@function calc-font-size($set, $family:$font-default) {
+	@return _fontset-feature(font-size, $family, $set);
+}
+
+@function calc-line-height($set, $family:$font-default) {
+	@return _fontset-feature(line-height, $family,  $set);
+}

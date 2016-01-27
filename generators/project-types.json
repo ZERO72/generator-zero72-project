@@ -1,0 +1,14 @@
+{
+	"instructions": [
+		"These instructions are not used in any way other than to serve the user of this file.",
+		"The first question/prompt will concern the project type. These values will be loaded. Refrein from capital letters.",
+		"These values shall be used as folder names.",
+		"E.g.: setup/wordpress/filesystem.json will be looked for.",
+		"Also: templates/wordpress/index.html might be looked for."
+	],
+	"types": [
+		"angular",
+		"wordpress",
+		"plain"
+	]
+}

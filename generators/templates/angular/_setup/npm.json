@@ -1,0 +1,30 @@
+{
+	"instructions": [
+		"Under optional, give a name. For default checked, use checked.",
+		"Under mandatory, give node_modules that are installed whether the uses chooses them or not. No \"name\" or checked needed.",
+		"The names given (e.g. jquery) should correspond to the official names in the NPM repository."
+	],
+	"mandatory": [
+		"angular",
+		"angular-animate",
+		"angular-route",
+		"grunt",
+		"grunt-contrib-concat",
+		"grunt-contrib-copy",
+		"grunt-contrib-jshint",
+		"grunt-contrib-uglify",
+		"grunt-contrib-watch",
+		"grunt-ng-annotate",
+		"grunt-processhtml",
+		"grunt-sass"
+	],
+	"optional": [
+		{
+			"name": "jquery",
+			"checked": true
+		},
+		{
+			"name": "bootstrap-sass"
+		}
+	]
+}

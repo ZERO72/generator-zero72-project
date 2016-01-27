@@ -1,0 +1,38 @@
+{
+	"instructions": [
+		"These instructions are not used in any way other than to serve the user of this file.",
+		"The hierarchy of this JSON file will translate into the structure of the file system of your generated project (base setup).",
+		"Folders can feature recursion via an array of 'children'.",
+		"EJS tags can be used in this file as well. It will be processed prior to being loaded.",
+		"Folders can have the template property. This means everything enclosed will be processed with EJS.",
+		"Folders with a source will be copied in their entirety. If a children array is given, it will still be processed afterwards.",
+		"Files can be copied by passing a source path, relative to the generators/templates folder."
+	],
+	"root": [
+		{
+			"type": "folder",
+			"name": "app",
+			"source": "app"
+		},
+		{
+			"type": "folder",
+			"name": "dist",
+			"source": "dist"
+		},
+		{
+			"type": "file",
+			"name": "Gruntfile.js",
+			"source": "Gruntfile.js"
+		},
+		{
+			"type": "file",
+			"name": "package.json",
+			"source": "package.json"
+		},
+		{
+			"type": "file",
+			"name": ".gitignore",
+			"source": ".gitignore"
+		}
+	]
+}

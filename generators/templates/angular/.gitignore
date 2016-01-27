@@ -1,0 +1,21 @@
+# Node modules of all types
+node_modules
+node_modules/*
+node_modules/**
+
+# All types of SASS cache
+**/.sass-cache
+**/.sass-cache/*
+.sass-cache/
+.sass-cache/*
+
+# Temporary files
+tmp/*
+
+# Manual contents (jsdoc)
+manual/*
+
+# Source maps
+*.map
+**/*.map
+*/**.map

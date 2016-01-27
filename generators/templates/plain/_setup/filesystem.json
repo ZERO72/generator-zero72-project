@@ -1,0 +1,65 @@
+{
+	"instructions": [
+		"These instructions are not used in any way other than to serve the user of this file.",
+		"The hierarchy of this JSON file will translate into the structure of the file system of your generated project (base setup).",
+		"Folders can feature recursion via an array of 'children'.",
+		"Files can be copied by passing a source path, relative to the generators/templates folder."
+	],
+	"root": [
+		{
+			"type": "folder",
+			"name": "assets",
+			"children": [
+				{
+					"type": "folder",
+					"name": "img",
+					"children": [
+						{
+							"type": "folder",
+							"name": "dummy",
+							"children": [
+								{
+									"type": "file",
+									"name": "hamster.jpg",
+									"source": "img/hamster.jpg"
+								}
+							]
+						},
+						{
+							"type": "folder",
+							"name": "test"
+						}
+					]
+				},
+				{
+					"type": "folder",
+					"name": "js"
+				},
+				{
+					"type": "folder",
+					"name": "scss"
+				},
+				{
+					"type": "folder",
+					"name": "css"
+				}
+			]
+		},
+		{
+			"type": "file",
+			"name": "index.html",
+			"source": "index.html",
+			"template": true
+		},
+		{
+			"type": "file",
+			"name": "package.json",
+			"source": "package.json",
+			"template": true
+		},
+		{
+			"type": "folder",
+			"name": "test"
+		}
+	]
+}
