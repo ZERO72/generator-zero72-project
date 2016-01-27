@@ -1,6 +1,6 @@
 {
   "name": "generator-zero72-project",
-  "version": "0.8.0",
+  "version": "0.8.0-beta",
   "description": "A custom-built Yeoman generator for ZERO72 which allows for the quick creation of templates, which in turn allow for jiffy front-end scaffolding.",
   "files": [
     "generators",
@@ -15,6 +15,11 @@
     "Scaffolding",
     "yeoman-generator"
   ],
+  "repository" :{ 
+    "type" : "git", 
+    "url" : "https://github.com/ZERO72/generator-zero72-project.git"
+  },
+  "bugs": "https://github.com/zero72/generator-zero72-project/issues",
   "dependencies": {
     "chalk": "^1.1.1",
     "ejs": "^2.3.4",
