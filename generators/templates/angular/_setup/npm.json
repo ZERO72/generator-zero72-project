@@ -1,9 +1,4 @@
 {
-	"instructions": [
-		"Under optional, give a name. For default checked, use checked.",
-		"Under mandatory, give node_modules that are installed whether the uses chooses them or not. No \"name\" or checked needed.",
-		"The names given (e.g. jquery) should correspond to the official names in the NPM repository."
-	],
 	"mandatory": [
 		"angular",
 		"angular-animate",

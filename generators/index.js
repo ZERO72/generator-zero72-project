@@ -64,18 +64,18 @@ module.exports = generators.Base.extend({
 
 		// Check if we simply need the array (the arg is true), if so, return right away
 		if(returnAsArray) {
-			return projectTypes.types;
+			return projectTypes;
 		}
 
 		// Start a var for string creation
 		var typesString = "";
 
 		// Loop through valid types, add them to string
-		for(var i = 0; i < projectTypes.types.length; i++) {
-			typesString += chalk.bgBlue(projectTypes.types[i]);
+		for(var i = 0; i < projectTypes.length; i++) {
+			typesString += chalk.bgBlue(projectTypes[i]);
 
 			// If not the last one in the list, add a comma and a space.
-			if( (i+1) < projectTypes.types.length ) {
+			if( (i+1) < projectTypes.length ) {
 				typesString += ", ";
 			}
 		}
@@ -176,7 +176,7 @@ module.exports = generators.Base.extend({
 	_createFileSystemFromFile: function(inputFile) {
 		// Setup vars for recurring items
 		var structure = this.fs.readJSON(inputFile);
-		var root = structure.root;
+		var root = structure;
 		var destRoot = settings.targetFolder + '/';
 		var srcRoot = settings.sourceFolder;
 		var self = this;
