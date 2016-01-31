@@ -1,0 +1,36 @@
+/* ====================================================
+   Sprite
+
+   Set the background position and size of an image
+   * Just position and dimensions *
+   ==================================================== */
+
+.img-set {
+
+	// background-image: url(#{$assets_url}/img/sprite@2x.png);
+	background-repeat: no-repeat;
+	background-size: $sprite-size;
+	background-position: 0 0;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+
+
+	// &.logo {
+	// 	background-position: 0 0;
+	// 	width: 88px;
+	// 	height: 18px;
+	// }
+
+	// &.volume {
+	// 	background-position: -158px -84px;
+	// 	width: 30px;
+	// 	height: 30px;
+	// }
+
+	// &.rawdata {
+	// 	background-position: -161px -143px;
+	// 	width: 30px;
+	// 	height: 30px;
+	// }
+}

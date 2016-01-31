@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="<%= langcode_iso %>" ng-app="app" ng-controller="mainController">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="<%= description %>" />
+
+		<meta property="og:title" content="<%= title %>">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="URL">
+		<meta property="og:image" content="IMAGE">
+		<meta property="og:site_name" content="<%= title %>">
+		<meta property="og:description" content="<%= description %>">
+
+		<!-- Custom stylesheets and scripts -->
+		<link rel="stylesheet" href="assets/stylesheets/css/style.css">
+		<script src="assets/js/libs/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<link rel="apple-touch-icon" href="assets/img/touch-icon.png">
+
+		<!-- Mobile bar + app style -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- JavaScript disabled -->
+		<noscript>
+			<style>
+				body * {
+					display: none;
+				}
+				body > noscript {
+					display: block;
+					width: 300px;
+					margin: 20px auto;
+				}
+				body > noscript > img {
+					display: block;
+					width: 300px;
+					margin-bottom: 10px;
+				}
+				body > noscript > p {
+					display: block;
+					text-align: center;
+				}
+			</style>
+		</noscript>
+
+		<!--[if lte IE 9 ]>
+			<style>
+				html {
+					background: black;
+				}
+				body * {
+					display: none;
+				}
+				body > #old-ie {
+					display: block;
+					width: 300px;
+					margin: 20px auto;
+					color: white;
+				}
+				body > #old-ie > img {
+					display: block;
+					width: 150px;
+					margin-bottom: 20px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				body > #old-ie > p {
+					display: block;
+					text-align: center;
+				}
+			</style>
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<!-- JavaScript disabled -->
+		<noscript>
+			<img src="http://placehold.it/150x150" alt="Logo">
+			<p>This website relies on Javascript. Please enable Javascript to use this website.</p>
+		</noscript>
+
+		<!--[if lte IE 9]>
+		<div id="old-ie">
+			<img src="http://placehold.it/150x150" alt="Logo">
+			<p>You are using an outdated browser. As a result, we cannot display this website properly.</p>
+
+			<p>Download one of the following, modern, updated browsers to continue:</p>
+			<ul>
+				<li><a href="www.google.nl/intl/nl/chrome/browser/" target="_blank">Google Chrome</a></li>
+				<li><a href="http://www.mozilla.org/nl/firefox/new/" target="_blank">Firefox</a></li>
+				<li><a href="http://www.opera.com/nl" target="_blank">Opera</a></li>
+				<li><a href="http://windows.microsoft.com/nl-nl/internet-explorer/download-ie" target="_blank">Internet Explorer</a></li>
+			</ul>
+		</div>
+		<![endif]-->
+
+
+
+		<!-- Main view -->
+		<main ng-view></main>
+		<!-- End Main view -->
+
+
+
+		<!-- build:remove -->
+			<!-- Livereload just for dev -->
+			<script src="//localhost:5555/livereload.js"></script>
+		<!-- /build -->
+
+
+		<!-- build:js assets/js/app.min.js -->
+			<!-- Libraries -->
+			<script type="text/javascript" src="assets/js/libs/fastclick.js"></script>
+			<script type="text/javascript" src="assets/js/scripts.js"></script>
+		<!-- /build -->
+
+
+	</body>
+</html>

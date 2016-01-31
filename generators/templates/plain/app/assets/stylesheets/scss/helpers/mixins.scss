@@ -1,0 +1,73 @@
+// FONT-SCALE MIXIN
+// Applies the functions above into a mixin so that we can set font-size and line-height at the same time.
+// If there is a font-family set there
+// Example: @include font-scale(small, $font-verdana);
+@mixin font-scale ($font-size, $family:$font-default, $line-height:$font-size) {
+	font-size: calc-font-size($font-size, $family);
+	line-height: calc-line-height($line-height, $family);
+	@if $family != $font-default {
+		font-family: fontset-family($family);
+	}
+}
+
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	box-sizing: $type;
+}
+
+@mixin opacity($opacity: 0.5) {
+	filter: alpha(opacity=($opacity * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}
+
+@mixin transform($params) {
+	-webkit-transform: $params;
+	-moz-transform: $params;
+	transform: $params;
+}
+
+@mixin transform-origin ($origin) {
+	moz-transform-origin: $origin;
+	 -o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+-webkit-transform-origin: $origin;
+		transform-origin: $origin;
+}
+
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+	-moz-transition: $what $length $easing;
+	-o-transition: $what $length $easing;
+	-webkit-transition: $what $length $easing;
+	-ms-transition: $what $length $easing;
+	transition: $what $length $easing;
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}

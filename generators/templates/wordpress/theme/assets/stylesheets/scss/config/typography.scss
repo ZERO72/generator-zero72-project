@@ -1,0 +1,49 @@
+$font-primary: "'Helvetica', sans-serif";
+$font-secondary: "'Verdana', sans-serif";
+
+// FONT-FAMILY SETTINGS
+$font-primary: (
+	stack: $font-primary,
+
+	small: (
+		font-size: 9,
+		line-height: 12
+	),
+
+	base: (
+		font-size: 13,
+		line-height: 16
+	),
+
+	mid: (
+		font-size: 26,
+		line-height: 30
+	),
+
+	large: (
+		font-size: 39,
+		line-height: 46
+	),
+
+);
+
+$font-secondary: (
+	stack: $font-secondary,
+
+	small: (
+		font-size: 14,
+		line-height: 20
+	),
+
+	base: (
+		font-size: 13,
+		line-height: 16
+	),
+
+	large: (
+		font-size: 25,
+		line-height: 30
+	),
+);
+
+$font-default: $font-primary;

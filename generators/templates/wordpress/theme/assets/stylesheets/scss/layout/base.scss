@@ -1,0 +1,111 @@
+/* ====================================================
+   Project base
+   ==================================================== */
+
+/* Remove text select interaction */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: fontset-family($font-primary);
+	@include font-scale(base);
+	background: $color-bg;
+	color: $color-text;
+}
+
+main {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+/* =======================
+   Titles
+   ======================= */
+h1 {
+	@include font-scale(large);
+	width: 100%;
+}
+
+h2 {
+	@include font-scale(large, $font-secondary);
+}
+
+h3 {
+	@include font-scale(large);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+
+/* =======================
+   Grid classes
+   ======================= */
+
+.ctn-center {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+.clm-set-2 {
+	.clm {
+		width: 50%;
+		min-height: 100vh;
+	}
+}
+
+.clm {
+	float: left;
+	position: relative;
+}
+
+
+/* =======================
+   Helper classes
+   ======================= */
+.group:before,
+.group:after {
+	content: " ";
+	display: table;
+}
+.group:after {
+	clear: both;
+}
+/* For IE 6/7 only */
+.group {
+	*zoom: 1;
+}
+
+.waves {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+}

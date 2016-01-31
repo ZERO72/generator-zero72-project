@@ -1,0 +1,20 @@
+{
+	"mandatory": [
+		"grunt",
+		"grunt-contrib-concat",
+		"grunt-contrib-copy",
+		"grunt-contrib-jshint",
+		"grunt-contrib-uglify",
+		"grunt-contrib-watch",
+		"grunt-sass"
+	],
+	"optional": [
+		{
+			"name": "jquery",
+			"checked": true
+		},
+		{
+			"name": "bootstrap-sass"
+		}
+	]
+}

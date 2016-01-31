@@ -1,5 +1,19 @@
 {
-	"name": "<%= name_code %>",
-	"description": "<%= description %>",
-	"version": "<%= version %>"
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "version": "<%= version %>",
+  "author": {
+	"name": "ZERO72",
+	"url": "http://zero72.com"
+  },
+  "license": "copyright",
+  "private": true,
+  "engines": {
+	"node": ">= 0.12.7"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  	
+  }
 }
