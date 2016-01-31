@@ -349,11 +349,28 @@ module.exports = generators.Base.extend({
 		var file = settings.sourceFolder + '_setup/npm.json';
 		// Include it
 		var contents = require(file);
+
+		var optional = [];
+
+		// Check optional NPM modules: if only string given, interpret as non-checked options (set name)
+		for( var i=0; i<contents.optional.length; i++ ) {
+			if(typeof contents.optional[i] == "string") {
+				optional.push({
+					name: contents.optional[i],
+					checked: false
+				});
+			}
+			else if(typeof contents.optional[i] == "object") {
+				optional.push(contents.optional[i]);
+			}
+		}
+
 		// Only map the actual module names on here
 		var listing = {
-			mandatory: contents.mandatory,
-			optional: contents.optional
+			mandatory: contents.mandatory || [],
+			optional: optional
 		};
+
 		// Set to global setting
 		settings.npmListing = listing;
 	},
@@ -491,12 +508,12 @@ module.exports = generators.Base.extend({
 		}
 
 		// List modules to be installed
-		this.log(chalk.bold("Modules to be installed:"));
+		this.log(chalk.bold("NPM modules to be installed:"));
 		for(var i=0; i<modules.length; i++) {
 			this.log(modules[i]);
 		}
 
-		this.log(chalk.dim.italic("Debug note: warnings are supressed due to the --silent option."));
+		this.log(chalk.dim.italic("Debug note: warnings are supressed due to the --silent option on the 'npm install' command."));
 
 		// Perform install
 		this.npmInstall(modules, { 'saveDev': true, 'silent': true });
