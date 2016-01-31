@@ -215,8 +215,23 @@ The templating system used here is provided by [`EJS`](http://ejs.co), as with a
 
 Essentially, everything works with tags, which look like this:
 
-- `<% some_var %>`
-- `<%= some_var %>`
+- `<% some_var %>` (evaluate a statement)
+- `<%= some_var %>` (echo a var)
+
+These `some_var` values are retrieved from `prompts.js`. (Stored as the `name` property of each prompt object.) The tags can be used in different places across the application:
+
+- filesystem.json (for dynamic file/folder names)
+- Template files (everything in your template folder, save for `_setup`)
+
+By evaluating statements in EJS, you can do some powerful things:
+
+```html
+<ul>
+<% for(var i=0; i<cars.length; i++) {%>
+   <li><%= cars[i] %></li>
+<% } %>
+</ul>
+```
 
 * * * *
 
@@ -227,9 +242,6 @@ Use space to toggle options on or off, arrows up and down for navigating, enter/
 
 ### Why is `prompts.js` a Javascript file while all the other setup files are in JSON format?
 We prefer JSON to store data, as we find it to be more semantic. However, JSON does not such things as functions or comments. Because Yeoman feeds these prompts into [`Inquirer.js`](https://github.com/SBoudrias/Inquirer.js/), where callbacks are required for dynamic functionality such as validation, we opted to change this one file to Javascript.
-
-### What are these instructions arrays in some of the JSON files?
-They do nothing. They are there in lieu of comments. (Which are, of course, not allowed in JSON.)
 
 * * * *
 
