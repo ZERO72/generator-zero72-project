@@ -10,7 +10,9 @@ var jsFiles = [
 
 	// Project JS files
 	"app/app/app.js",
+	"app/config/routes.js",
 	"app/app/shared/mainController.js",
+	"app/app/components/errors/errorController.js"
 
 ];
 
@@ -19,10 +21,10 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		banner: '/*! <%%= pkg.title || pkg.name %> - v<%%= pkg.version %> - ' +
-		'<%%= grunt.template.today("yyyy-mm-dd") %>\n' +
-		'<%%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-		'* Copyright (c) <%%= grunt.template.today("yyyy") %> <%%= pkg.author.name %> */\n',
+		banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+		'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+		'<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+		'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */\n',
 
 		// Task configuration.
 		sass: {
@@ -90,7 +92,7 @@ module.exports = function(grunt) {
 
 		uglify: {
 			options: {
-				banner: '<%%= banner %>',
+				banner: '<%= banner %>',
 				mangle: false
 			},
 			production: {
@@ -115,6 +117,37 @@ module.exports = function(grunt) {
 						cwd: 'app/assets/img',
 						src: ['**'],
 						dest: 'dist/assets/img'
+					},
+
+					{
+						expand: true,
+						cwd: 'app/assets/js/libs',
+						src: ['**'],
+						dest: 'dist/assets/js/libs'
+					}
+
+				]
+			},
+			dev : {
+				files : [
+
+					{
+						expand: true,
+						cwd: 'node_modules/angular',
+						src: ['angular.js'],
+						dest: 'app/assets/js/libs'
+					},
+					{
+						expand: true,
+						cwd: 'node_modules/angular-route',
+						src: ['angular-route.js'],
+						dest: 'app/assets/js/libs'
+					},
+					{
+						expand: true,
+						cwd: 'node_modules/angular-animate',
+						src: ['angular-animate.js'],
+						dest: 'app/assets/js/libs'
 					}
 
 				]
@@ -166,7 +199,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Default task.
-	grunt.registerTask('default', ['sass:dev', 'jshint', 'watch']);
+	grunt.registerTask('default', ['sass:dev', 'jshint', 'copy:dev', 'watch']);
 
 	// Production build task
 	grunt.registerTask('build', ['sass:prod', 'jshint', 'processhtml', 'concat', 'ngAnnotate', 'uglify', 'copy']);
