@@ -10,7 +10,7 @@ var jsFiles = [
 
 	// Project JS files
 	"app/app/app.js",
-	"app/config/routes.js",
+	"app/app/config/routes.js",
 	"app/app/shared/mainController.js",
 	"app/app/components/errors/errorController.js"
 
