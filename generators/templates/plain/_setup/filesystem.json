@@ -22,6 +22,6 @@
 	{
 		"type": "file",
 		"name": ".gitignore",
-		"source": ".gitignore"
+		"source": "gitignore-src.txt"
 	}
 ]
